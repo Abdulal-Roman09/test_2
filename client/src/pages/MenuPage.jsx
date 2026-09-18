@@ -1,15 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, SlidersHorizontal, Sparkles, AlertCircle, Coffee, RotateCcw } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Search, SlidersHorizontal, Sparkles, AlertCircle, Coffee, RotateCcw, ShoppingBag } from 'lucide-react';
 import { fetchMenu } from '../api/client';
 import SectionHeader from '../components/ui/SectionHeader';
 import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+import { toSlug } from './MenuItemPage';
+import { useCart } from '../menu/CartContext';
 
 export default function MenuPage() {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { totalItems } = useCart();
 
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedDietary, setSelectedDietary] = useState([]);
@@ -83,11 +87,26 @@ export default function MenuPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
-        <SectionHeader
-          eyebrow="Daily Roasts & Provisions"
-          title="The Curated Café Menu"
-          description="Every beverage is pulled to precision brew ratios; all pastries are handcrafted daily by our in-house baker using wild leavening and pasture butter."
-        />
+        <div className="flex items-start justify-between gap-4 mb-4">
+          <SectionHeader
+            eyebrow="Daily Roasts & Provisions"
+            title="The Curated Café Menu"
+            description="Every beverage is pulled to precision brew ratios; all pastries are handcrafted daily by our in-house baker using wild leavening and pasture butter."
+            className="mb-0"
+          />
+          {totalItems > 0 && (
+            <Link
+              to="/menu/cart"
+              className="shrink-0 inline-flex items-center gap-2 text-sm font-medium text-espresso-700 hover:text-gold-600 transition-colors mt-1"
+              aria-label={`View cart, ${totalItems} items`}
+            >
+              <ShoppingBag className="w-5 h-5" />
+              <span className="bg-gold-500 text-espresso-950 text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                {totalItems}
+              </span>
+            </Link>
+          )}
+        </div>
 
         {/* Filter Controls Bar */}
         <div className="bg-cream-100 rounded-3xl p-6 mb-12 border border-cream-300/80 shadow-sm space-y-6">
@@ -209,7 +228,13 @@ export default function MenuPage() {
         {!loading && !error && filteredItems.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="p-0 overflow-hidden flex flex-col group h-full">
+              <Link
+                key={item.id}
+                to={`/menu/${toSlug(item.name)}`}
+                className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 rounded-2xl"
+                aria-label={`View details for ${item.name}`}
+              >
+              <Card className="p-0 overflow-hidden flex flex-col h-full">
                 {/* Visual Header */}
                 <div className="relative h-56 overflow-hidden bg-espresso-900">
                   <img
@@ -283,6 +308,7 @@ export default function MenuPage() {
                   )}
                 </div>
               </Card>
+              </Link>
             ))}
           </div>
         )}
