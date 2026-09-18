@@ -39,6 +39,8 @@ export default {
       fontFamily: {
         serif: ['Fraunces', 'Playfair Display', 'Georgia', 'serif'],
         sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        body: ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'grain': "radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0)",
