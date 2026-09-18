@@ -1,0 +1,17 @@
+{
+  "name": "artisan-coffee-shop",
+  "version": "1.0.0",
+  "description": "Full-stack boutique café web application for Ember & Bloom Coffee Roasters",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"yellow,cyan\" \"npm run server\" \"npm run client\"",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "start": "npm --prefix server start",
+    "build": "npm --prefix client run build",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
