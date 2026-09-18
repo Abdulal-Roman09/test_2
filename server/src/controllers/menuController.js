@@ -68,7 +68,30 @@ async function getMenuItemById(req, res, next) {
   }
 }
 
+async function getMenuItemBySlug(req, res, next) {
+  try {
+    const rawData = await fs.readFile(MENU_FILE, 'utf-8');
+    const menu = JSON.parse(rawData);
+    const item = menu.find(m => m.slug === req.params.slug);
+
+    if (!item) {
+      return res.status(404).json({
+        success: false,
+        message: `Menu item with slug '${req.params.slug}' was not found.`
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: item
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   getMenu,
-  getMenuItemById
+  getMenuItemById,
+  getMenuItemBySlug
 };

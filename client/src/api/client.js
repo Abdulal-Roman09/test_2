@@ -38,6 +38,17 @@ export async function fetchMenuItem(id) {
 }
 
 /**
+ * Fetch single menu item by slug
+ */
+export async function fetchMenuItemBySlug(slug) {
+  const response = await fetch(`${API_BASE}/menu/slug/${slug}`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch menu item with slug '${slug}'`);
+  }
+  return response.json();
+}
+
+/**
  * Submit contact inquiry
  */
 export async function submitContact(formData) {
