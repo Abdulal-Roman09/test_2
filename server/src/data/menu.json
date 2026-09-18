@@ -1,184 +1,436 @@
 [
   {
     "id": "item-1",
+    "slug": "single-origin-pour-over",
     "name": "Single-Origin Pour Over",
     "category": "Espresso & Classics",
     "price": 5.75,
     "description": "Hand-poured through Hario V60 to extract clean, vibrant floral aromatics and fruit acidity.",
     "tastingNotes": ["Bergamot", "Jasmine", "Honeyed Peach"],
+    "tastingNarrative": "The first sip opens with bright bergamot citrus that lifts across the palate, followed by a delicate jasmine floral note that lingers in the steam. As it cools, a honeyed peach sweetness emerges, rounded by a silky body that finishes clean and tea-like. This is a coffee that rewards slow sipping.",
     "origin": "Yirgacheffe, Ethiopia (Washed)",
+    "terroir": {
+      "region": "Gedeo Zone, Yirgacheffe",
+      "country": "Ethiopia",
+      "altitude": "1,800–2,200m",
+      "processing": "Fully washed",
+      "harvest": "November–January",
+      "farm": "Kochere Washing Station"
+    },
     "roastLevel": "Light Roast",
+    "brewInfo": {
+      "method": "Pour over (Hario V60 or Kalita Wave)",
+      "grindSize": "Medium-fine (like table salt)",
+      "ratio": "1:16 (20g coffee to 320g water)",
+      "temperature": "205°F / 96°C",
+      "notes": "Pour in concentric circles. Total brew time around 3:00–3:30."
+    },
     "dietary": ["Vegan", "GF"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-2", "item-4", "item-8"]
   },
   {
     "id": "item-2",
+    "slug": "velvet-cortado",
     "name": "Velvet Cortado",
     "category": "Espresso & Classics",
     "price": 4.50,
     "description": "Equal parts rich double shot of our house espresso and silky steamed whole milk served in a Gibraltar glass.",
     "tastingNotes": ["Dark Chocolate", "Toasted Hazelnut", "Caramel"],
+    "tastingNarrative": "A cortado is a conversation between espresso and milk, and ours speaks in warm, rounded tones. The double shot brings dark chocolate intensity that the steamed whole milk softens into toasted hazelnut and caramel. Served in a Gibraltar glass, it's the drink for someone who wants espresso clarity without the foam theatre of a latte.",
     "origin": "Huila, Colombia & Cerrado, Brazil",
+    "terroir": {
+      "region": "Huila & Cerrado",
+      "country": "Colombia & Brazil",
+      "altitude": "1,200–1,700m",
+      "processing": "Washed (Colombia) / Natural (Brazil)",
+      "harvest": "April–September",
+      "farm": "La Esperanza (Huila) / Fazenda Rainha (Cerrado)"
+    },
     "roastLevel": "Medium Roast",
+    "brewInfo": {
+      "method": "Espresso machine, double shot",
+      "grindSize": "Fine (like powdered sugar)",
+      "ratio": "1:2 (18g in, 36g out)",
+      "temperature": "200°F / 93°C",
+      "notes": "Extraction time 25–28 seconds. Steamed whole milk to 140°F, glossy microfoam."
+    },
     "dietary": ["GF"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-4", "item-1", "item-3"]
   },
   {
     "id": "item-3",
+    "slug": "espresso-romano",
     "name": "Espresso Romano",
     "category": "Espresso & Classics",
     "price": 3.75,
     "description": "Double ristretto pull crowned with caramelized lemon peel expressing natural oils on the crema.",
     "tastingNotes": ["Meyer Lemon", "Cacao Nibs", "Brown Sugar"],
+    "tastingNarrative": "This is espresso at its most concentrated and aromatic. The ristretto pull concentrates the sweetness into a thick, syrupy shot, while the caramelized lemon peel releases citrus oils across the crema. Meyer lemon brightness meets cacao nib bitterness, with brown sugar warmth rounding the finish. A small drink with enormous presence.",
     "origin": "Antigua, Guatemala",
+    "terroir": {
+      "region": "Antigua Valley",
+      "country": "Guatemala",
+      "altitude": "1,500–1,700m",
+      "processing": "Fully washed",
+      "harvest": "December–March",
+      "farm": "Finca El Pilar"
+    },
     "roastLevel": "Medium-Dark Roast",
+    "brewInfo": {
+      "method": "Espresso machine, ristretto pull",
+      "grindSize": "Very fine (almost talcum)",
+      "ratio": "1:1.5 (18g in, 27g out)",
+      "temperature": "200°F / 93°C",
+      "notes": "Short extraction, 20–22 seconds. Express lemon peel oils over the crema just before serving."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-2", "item-4", "item-5"]
   },
   {
     "id": "item-4",
+    "slug": "artisanal-flat-white",
     "name": "Artisanal Flat White",
     "category": "Espresso & Classics",
     "price": 4.95,
     "description": "Double ristretto pulled into velvety micro-foam with precise temperature control for maximum sweetness.",
     "tastingNotes": ["Almond Praline", "Baker's Cocoa", "Malted Milk"],
-    "origin": "Tarrazu, Costa Rica",
+    "tastingNarrative": "The flat white is about texture as much as taste, and ours is micro-foam so fine it barely registers as foam at all. The double ristretto base brings almond praline and baker's cocoa depth, while the steamed milk integrates so seamlessly you taste malted milk sweetness from first sip to last. No latte art required — just a perfectly balanced cup.",
+    "origin": "Tarrazú, Costa Rica",
+    "terroir": {
+      "region": "Tarrazú",
+      "country": "Costa Rica",
+      "altitude": "1,400–1,800m",
+      "processing": "Honey process",
+      "harvest": "November–February",
+      "farm": "Hacienda Sonora"
+    },
     "roastLevel": "Medium Roast",
+    "brewInfo": {
+      "method": "Espresso machine, double ristretto",
+      "grindSize": "Fine (like table salt)",
+      "ratio": "1:2 (18g in, 36g out)",
+      "temperature": "200°F / 93°C",
+      "notes": "Micro-foam should be silky, not frothy. Pour with the jug close to the cup surface."
+    },
     "dietary": ["GF"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-2", "item-1", "item-8"]
   },
   {
     "id": "item-5",
+    "slug": "nitro-smoked-vanilla-cold-brew",
     "name": "Nitro Smoked Vanilla Cold Brew",
     "category": "Cold Brew & Drafts",
     "price": 6.25,
     "description": "20-hour cold steep infused with pure nitrogen gas and hand-scraped Madagascar vanilla pod reduction.",
     "tastingNotes": ["Smoked Vanilla", "Molasses", "Creamy Stout"],
+    "tastingNarrative": "This cold brew drinks like a dessert cocktail without the alcohol. Twenty hours of cold extraction pull out molasses depth and a creamy body that the nitrogen infusion makes impossibly smooth. The smoked Madagascar vanilla doesn't taste like a candle — it tastes like actual vanilla bean that's been near a fire, adding warmth without sweetness. Served black, it's a revelation.",
     "origin": "Chiapas, Mexico",
+    "terroir": {
+      "region": "Sierra Madre, Chiapas",
+      "country": "Mexico",
+      "altitude": "1,200–1,500m",
+      "processing": "Washed",
+      "harvest": "January–March",
+      "farm": "Finca Irlanda (organic cooperative)"
+    },
     "roastLevel": "Dark Roast",
+    "brewInfo": {
+      "method": "Cold brew, nitrogen-infused on tap",
+      "grindSize": "Coarse (like raw sugar)",
+      "ratio": "1:8 (100g coffee to 800g water)",
+      "temperature": "Room temp steep, served at 38°F",
+      "notes": "Steep 20 hours at room temperature. Strain, then nitrogen-inject before serving."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-6", "item-7", "item-10"]
   },
   {
     "id": "item-6",
+    "slug": "kyoto-slow-drip-reserve",
     "name": "Kyoto Slow-Drip Reserve",
     "category": "Cold Brew & Drafts",
     "price": 6.75,
     "description": "Gravity-fed water droplets over 14 hours yielding an exceptionally smooth, liqueur-like body with zero astringency.",
     "tastingNotes": ["Black Cherry", "Cedar", "Dark Plum"],
+    "tastingNarrative": "Patience in a glass. Water falls one drop at a time over fourteen hours, and the result is a cold coffee with the body of a fine liqueur. Black cherry sweetness, cedar warmth, and dark plum depth unfold slowly as you sip. There's zero astringency — just pure, concentrated flavor that tastes like the coffee itself, undistorted by heat. This is our most contemplative drink.",
     "origin": "Nyeri, Kenya",
+    "terroir": {
+      "region": "Central Highlands, Nyeri",
+      "country": "Kenya",
+      "altitude": "1,700–2,000m",
+      "processing": "Double washed",
+      "harvest": "October–December",
+      "farm": "Othaya Farmers Cooperative"
+    },
     "roastLevel": "Medium-Light Roast",
+    "brewInfo": {
+      "method": "Kyoto-style slow drip tower",
+      "grindSize": "Medium (like kosher salt)",
+      "ratio": "1:10 (80g coffee to 800g water)",
+      "temperature": "Ice water, ~38°F",
+      "notes": "14-hour drip. Ice water in the top chamber, one drop per second through the coffee bed."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-5", "item-7", "item-1"]
   },
   {
     "id": "item-7",
+    "slug": "cascara-sparkling-tonic",
     "name": "Cascara Sparkling Tonic",
     "category": "Cold Brew & Drafts",
     "price": 5.25,
     "description": "Brewed dried coffee cherry tea paired with botanical tonic, grapefruit twist, and crushed mint.",
     "tastingNotes": ["Rosehip", "Hibiscus", "Tangerine"],
+    "tastingNarrative": "Not coffee, but born from the coffee plant. Cascara — dried coffee cherry skin — brews into a tea that's floral and fruity, like rosehip and hibiscus had a tangerine cousin. We top it with botanical tonic for effervescence and a grapefruit twist that brightens everything. It's the drink for someone who wants something unexpected, refreshing, and completely unique to specialty coffee.",
     "origin": "Santa Ana, El Salvador",
+    "terroir": {
+      "region": "Santa Ana Volcano Region",
+      "country": "El Salvador",
+      "altitude": "1,200–1,600m",
+      "processing": "Natural sun-dried",
+      "harvest": "November–February",
+      "farm": "Finca Los Planes"
+    },
     "roastLevel": "Sun-Dried Husk",
+    "brewInfo": {
+      "method": "Steeped cascara tea, topped with tonic",
+      "grindSize": "N/A — whole dried cascara",
+      "ratio": "20g cascara to 200g hot water",
+      "temperature": "Steep at 200°F for 5 min, serve over ice",
+      "notes": "Steep cascara, strain, chill. Build over ice, top with tonic, garnish with grapefruit twist and crushed mint."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-5", "item-6", "item-8"]
   },
   {
     "id": "item-8",
+    "slug": "honey-lavender-oat-latte",
     "name": "Honey Lavender Oat Latte",
     "category": "Signature Creations",
     "price": 6.50,
     "description": "Local raw wildflower honey, culinary French lavender blossoms, double espresso, and creamy steamed oat milk.",
     "tastingNotes": ["Wild Lavender", "Golden Honeycomb", "Toasted Oats"],
+    "tastingNarrative": "This latte smells like a garden in summer before you even take a sip. Culinary French lavender blossoms infuse the honey syrup with a floral note that's herbaceous, not perfumey. The double espresso grounds everything in roasted depth, while steamed oat milk adds a toasty, creamy body. The local wildflower honey brings a golden sweetness that ties it all together without being cloying.",
     "origin": "Bourbon & Caturra Blend",
+    "terroir": {
+      "region": "Multi-origin blend",
+      "country": "Colombia & Guatemala",
+      "altitude": "1,400–1,800m",
+      "processing": "Washed",
+      "harvest": "Spring harvest blend",
+      "farm": "Blend of partner farms"
+    },
     "roastLevel": "Medium Roast",
+    "brewInfo": {
+      "method": "Espresso base, latte build",
+      "grindSize": "Fine (like powdered sugar)",
+      "ratio": "Double shot + 6oz steamed oat milk",
+      "temperature": "Espresso at 200°F, milk to 140°F",
+      "notes": "Infuse honey with culinary lavender for 10 min, strain. Drizzle syrup, pull espresso over it, top with steamed oat milk."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-9", "item-10", "item-2"]
   },
   {
     "id": "item-9",
+    "slug": "spiced-cardamom-miel",
     "name": "Spiced Cardamom Miel",
     "category": "Signature Creations",
     "price": 6.25,
     "description": "Freshly cracked green cardamom pods simmered with cinnamon bark, dark raw clover honey, and microfoam.",
     "tastingNotes": ["Green Cardamom", "Warm Cinnamon", "Clover Blossom"],
+    "tastingNarrative": "A miel is a honey-kissed espresso drink, and ours builds layers of spice into every sip. Green cardamom pods crack open to release their eucalyptus-like warmth, while cinnamon bark adds a woody sweetness. The dark raw clover honey brings earthy depth, and the microfoam ties everything into a smooth, spiced warmth that tastes like a cooler evening in a cup.",
     "origin": "Sidama, Ethiopia",
+    "terroir": {
+      "region": "Sidama",
+      "country": "Ethiopia",
+      "altitude": "1,700–2,200m",
+      "processing": "Natural",
+      "harvest": "October–January",
+      "farm": "Bensa Washing Station"
+    },
     "roastLevel": "Medium Roast",
+    "brewInfo": {
+      "method": "Espresso base, spice-infused miel",
+      "grindSize": "Fine",
+      "ratio": "Double shot + 1 tbsp honey syrup + steamed milk",
+      "temperature": "Espresso at 200°F, milk to 145°F",
+      "notes": "Simmer cracked cardamom and cinnamon in honey for 5 min, strain. Build drink with espresso, spice honey, and steamed milk."
+    },
     "dietary": ["GF"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-8", "item-10", "item-1"]
   },
   {
     "id": "item-10",
+    "slug": "bourbon-barrel-aged-brew",
     "name": "Bourbon Barrel-Aged Brew",
     "category": "Signature Creations",
     "price": 6.95,
     "description": "Green beans aged 60 days in charred American oak bourbon casks prior to gentle drum roasting.",
     "tastingNotes": ["Oak", "Vanilla Bean", "Warm Caramel", "Subtle Spice"],
+    "tastingNarrative": "This is coffee that spent two months learning from whiskey. Green beans rest in charred American oak bourbon casks, absorbing vanilla and oak character before they're ever roasted. The result is a cup with warm caramel sweetness, genuine oak depth, and a subtle spice that comes from the wood itself. It's not flavored coffee — it's coffee that grew up in a barrel.",
     "origin": "Huehuetenango, Guatemala",
+    "terroir": {
+      "region": "Huehuetenango Highlands",
+      "country": "Guatemala",
+      "altitude": "1,500–2,000m",
+      "processing": "Washed",
+      "harvest": "January–March",
+      "farm": "Finca El Injerto"
+    },
     "roastLevel": "Medium-Dark Roast",
+    "brewInfo": {
+      "method": "Best as pour-over or drip to preserve barrel character",
+      "grindSize": "Medium",
+      "ratio": "1:16 (20g coffee to 320g water)",
+      "temperature": "205°F / 96°C",
+      "notes": "Don't over-extract — the barrel character is delicate. A clean pour-over or batch brew lets the oak and vanilla speak."
+    },
     "dietary": ["Vegan", "GF", "Dairy-Free"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-5", "item-8", "item-9"]
   },
   {
     "id": "item-11",
+    "slug": "sourdough-cardamom-knot",
     "name": "Sourdough Cardamom Knot",
     "category": "Artisanal Pastries",
     "price": 4.75,
     "description": "Naturally leavened 36-hour wild yeast brioche dough twisted with butter, pearl sugar, and freshly crushed cardamom.",
     "tastingNotes": ["Buttery Brioche", "Pearl Sugar", "Cardamom Spice"],
+    "tastingNarrative": "Thirty-six hours of wild fermentation give this knot its complex, slightly tangy flavor that sets it apart from ordinary pastries. The brioche dough is rich with pasture butter, twisted by hand and studded with pearl sugar that caramelizes in the oven. Freshly crushed cardamom adds a warm, aromatic spice that fills the bakery every morning. Best torn apart and eaten warm.",
     "origin": "In-house Bakery Daily",
+    "terroir": {
+      "region": "Baked in-house",
+      "country": "Local",
+      "altitude": "N/A",
+      "processing": "36-hour wild fermentation",
+      "harvest": "Daily, baked fresh at 5 AM",
+      "farm": "Our kitchen"
+    },
     "roastLevel": "Baked Fresh 5 AM",
+    "brewInfo": {
+      "method": "Served as-is, warm from the oven",
+      "grindSize": "N/A",
+      "ratio": "N/A",
+      "temperature": "Best served warm",
+      "notes": "Pairs beautifully with a cortado or flat white. The butter and cardamom complement medium-roast espresso."
+    },
     "dietary": ["Vegetarian"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-12", "item-14", "item-2"]
   },
   {
     "id": "item-12",
+    "slug": "pistachio-rose-frangipane",
     "name": "Pistachio Rose Frangipane",
     "category": "Artisanal Pastries",
     "price": 5.50,
     "description": "Flaky hand-laminated croissant dough filled with stone-ground Sicilian pistachio cream and dried Damask rose petals.",
     "tastingNotes": ["Sicilian Pistachio", "Flaky Butter", "Floral Rose"],
+    "tastingNarrative": "This isn't a croissant with filling — it's a layered pastry where the dough and the filling are in constant dialogue. Hand-laminated butter layers shatter on the first bite, releasing stone-ground Sicilian pistachio cream that's nutty, rich, and slightly savory. Dried Damask rose petals add a whisper of floral elegance that lifts the whole thing. It's our most architectural pastry.",
     "origin": "In-house Bakery Daily",
+    "terroir": {
+      "region": "Baked in-house",
+      "country": "Sicilian pistachios, local dairy",
+      "altitude": "N/A",
+      "processing": "Hand-laminated, 48-hour cold ferment",
+      "harvest": "Daily, baked fresh at 5 AM",
+      "farm": "Our kitchen"
+    },
     "roastLevel": "Baked Fresh 5 AM",
+    "brewInfo": {
+      "method": "Served as-is",
+      "grindSize": "N/A",
+      "ratio": "N/A",
+      "temperature": "Best served at room temp to appreciate the layers",
+      "notes": "The pistachio and rose pair beautifully with a pour-over — the floral notes in the coffee echo the rose in the pastry."
+    },
     "dietary": ["Vegetarian"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-11", "item-13", "item-1"]
   },
   {
     "id": "item-13",
+    "slug": "gluten-free-tahini-fudge-brownie",
     "name": "Gluten-Free Tahini Fudge Brownie",
     "category": "Artisanal Pastries",
     "price": 4.50,
     "description": "Rich 70% Valrhona dark chocolate swirled with toasted sesame tahini and finished with Maldon sea salt flakes.",
     "tastingNotes": ["Dark Chocolate", "Nutty Tahini", "Maldon Sea Salt"],
+    "tastingNarrative": "This brownie doesn't announce itself as gluten-free — it just happens to be. Rich 70% Valrhona dark chocolate creates a fudgy, almost truffle-like center, while toasted sesame tahini swirls through it with nutty depth. Maldon sea salt flakes on top make the chocolate taste even more like itself. Dense, intense, and somehow dairy-free too.",
     "origin": "In-house Bakery Daily",
+    "terroir": {
+      "region": "Baked in-house",
+      "country": "Valrhona chocolate, artisan tahini",
+      "altitude": "N/A",
+      "processing": "Hand-mixed, single-origin chocolate",
+      "harvest": "Daily, baked fresh at 5 AM",
+      "farm": "Our kitchen"
+    },
     "roastLevel": "Baked Fresh 5 AM",
+    "brewInfo": {
+      "method": "Served as-is",
+      "grindSize": "N/A",
+      "ratio": "N/A",
+      "temperature": "Room temperature",
+      "notes": "This pairs brilliantly with a dark roast espresso or the Nitro Cold Brew — the chocolate and coffee amplify each other."
+    },
     "dietary": ["GF", "Vegetarian", "Dairy-Free"],
     "featured": true,
-    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-11", "item-12", "item-5"]
   },
   {
     "id": "item-14",
+    "slug": "wild-mushroom-gruyere-galette",
     "name": "Wild Mushroom & Gruyère Galette",
     "category": "Artisanal Pastries",
     "price": 6.50,
     "description": "Rustic whole-grain rye crust with caramelized shallots, thyme-roasted chanterelles, and cave-aged Swiss Gruyère.",
     "tastingNotes": ["Earthy Mushrooms", "Nutty Gruyère", "Fresh Thyme"],
+    "tastingNarrative": "Our most savory pastry, this galette bridges breakfast and lunch. A rustic whole-grain rye crust cradles caramelized shallots and thyme-roasted chanterelle mushrooms, topped with cave-aged Swiss Gruyère that melts into golden, nutty complexity. The rye crust adds an earthy backbone that ties everything together. This is the pastry for someone who doesn't have a sweet tooth.",
     "origin": "In-house Bakery Daily",
+    "terroir": {
+      "region": "Baked in-house",
+      "country": "Local foraged mushrooms, Swiss Gruyère",
+      "altitude": "N/A",
+      "processing": "Rustic hand-shaped, same-day bake",
+      "harvest": "Daily, baked fresh at 6 AM",
+      "farm": "Our kitchen"
+    },
     "roastLevel": "Baked Fresh 6 AM",
+    "brewInfo": {
+      "method": "Served as-is",
+      "grindSize": "N/A",
+      "ratio": "N/A",
+      "temperature": "Warm from the oven",
+      "notes": "This pairs wonderfully with a cortado or any espresso drink — the nutty Gruyère and chocolate espresso notes are natural companions."
+    },
     "dietary": ["Vegetarian"],
     "featured": false,
-    "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80"
+    "image": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+    "relatedIds": ["item-11", "item-12", "item-2"]
   }
 ]

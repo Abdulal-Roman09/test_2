@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, SlidersHorizontal, Sparkles, AlertCircle, Coffee, RotateCcw } from 'lucide-react';
 import { fetchMenu } from '../api/client';
 import SectionHeader from '../components/ui/SectionHeader';
-import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 
@@ -44,15 +44,12 @@ export default function MenuPage() {
     setSearchQuery('');
   };
 
-  // Filter items in memory
   const filteredItems = useMemo(() => {
     return menuItems.filter((item) => {
-      // Category filter
       if (selectedCategory !== 'All' && item.category !== selectedCategory) {
         return false;
       }
 
-      // Dietary filter (must have all selected tags)
       if (selectedDietary.length > 0) {
         const itemTags = (item.dietary || []).map((t) => t.toLowerCase());
         const matchesAll = selectedDietary.every((reqTag) =>
@@ -61,7 +58,6 @@ export default function MenuPage() {
         if (!matchesAll) return false;
       }
 
-      // Search query filter (name, description, or tasting notes)
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
         const matchesName = item.name.toLowerCase().includes(query);
@@ -209,80 +205,87 @@ export default function MenuPage() {
         {!loading && !error && filteredItems.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="p-0 overflow-hidden flex flex-col group h-full">
-                {/* Visual Header */}
-                <div className="relative h-56 overflow-hidden bg-espresso-900">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 right-3 bg-espresso-950/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-gold-500/50 text-gold-300 font-serif font-bold text-sm shadow-md">
-                    ${item.price.toFixed(2)}
-                  </div>
-                  {item.featured && (
-                    <div className="absolute top-3 left-3 bg-gold-500 text-espresso-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" /> Staff Pick
+              <Link
+                key={item.id}
+                to={`/menu/${item.slug}`}
+                className="block group rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-50"
+                aria-label={`View details for ${item.name}`}
+              >
+                <div className="bg-cream-100/90 rounded-2xl border border-cream-300/70 overflow-hidden flex flex-col h-full transition-all duration-300 group-hover:shadow-artisanal group-hover:border-gold-500/50 group-hover:-translate-y-1">
+                  {/* Visual Header */}
+                  <div className="relative h-56 overflow-hidden bg-espresso-900">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 right-3 bg-espresso-950/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-gold-500/50 text-gold-300 font-serif font-bold text-sm shadow-md transition-transform duration-300 group-hover:scale-105">
+                      ${item.price.toFixed(2)}
                     </div>
-                  )}
-                  {item.roastLevel && (
-                    <div className="absolute bottom-3 left-3">
-                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-espresso-950/80 text-cream-100 backdrop-blur-sm border border-espresso-700">
-                        {item.roastLevel}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <span className="text-xs uppercase tracking-wider text-gold-600 font-semibold">
-                      {item.category}
-                    </span>
-                    <div className="flex flex-wrap gap-1">
-                      {item.dietary && item.dietary.map((tag) => (
-                        <Badge key={tag}>{tag}</Badge>
-                      ))}
-                    </div>
+                    {item.featured && (
+                      <div className="absolute top-3 left-3 bg-gold-500 text-espresso-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md flex items-center gap-1">
+                        <Sparkles className="w-3 h-3" /> Staff Pick
+                      </div>
+                    )}
+                    {item.roastLevel && (
+                      <div className="absolute bottom-3 left-3">
+                        <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-espresso-950/80 text-cream-100 backdrop-blur-sm border border-espresso-700">
+                          {item.roastLevel}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
-                  <h3 className="font-serif text-xl font-bold text-espresso-950 group-hover:text-gold-600 transition-colors mb-2">
-                    {item.name}
-                  </h3>
-
-                  <p className="text-sm text-espresso-700/80 leading-relaxed mb-4 flex-1">
-                    {item.description}
-                  </p>
-
-                  {/* Tasting Notes */}
-                  {item.tastingNotes && item.tastingNotes.length > 0 && (
-                    <div className="pt-3 border-t border-cream-300/60 mt-auto">
-                      <span className="text-[11px] uppercase tracking-wider text-espresso-500 block mb-1.5 font-medium">
-                        Tasting Profile
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <span className="text-xs tracking-wider text-gold-600 font-semibold">
+                        {item.category}
                       </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {item.tastingNotes.map((note) => (
-                          <span
-                            key={note}
-                            className="text-xs px-2.5 py-0.5 rounded-md bg-cream-200 text-espresso-800 font-medium"
-                          >
-                            {note}
-                          </span>
+                      <div className="flex flex-wrap gap-1">
+                        {item.dietary && item.dietary.map((tag) => (
+                          <Badge key={tag}>{tag}</Badge>
                         ))}
                       </div>
                     </div>
-                  )}
 
-                  {/* Origin Terroir */}
-                  {item.origin && (
-                    <div className="mt-3 text-xs text-espresso-600 font-light italic">
-                      Terroir: {item.origin}
-                    </div>
-                  )}
+                    <h3 className="font-serif text-xl font-bold text-espresso-950 group-hover:text-gold-600 transition-colors mb-2">
+                      {item.name}
+                    </h3>
+
+                    <p className="text-sm text-espresso-700/80 leading-relaxed mb-4 flex-1">
+                      {item.description}
+                    </p>
+
+                    {/* Tasting Notes */}
+                    {item.tastingNotes && item.tastingNotes.length > 0 && (
+                      <div className="pt-3 border-t border-cream-300/60 mt-auto">
+                        <span className="text-[11px] tracking-wider text-espresso-500 block mb-1.5 font-medium">
+                          Tasting Profile
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {item.tastingNotes.map((note) => (
+                            <span
+                              key={note}
+                              className="text-xs px-2.5 py-0.5 rounded-md bg-cream-200 text-espresso-800 font-medium"
+                            >
+                              {note}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Origin Terroir */}
+                    {item.origin && (
+                      <div className="mt-3 text-xs text-espresso-600 font-light italic">
+                        Terroir: {item.origin}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </Card>
+              </Link>
             ))}
           </div>
         )}
